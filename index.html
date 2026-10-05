@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Hermes Life OS</title>
-<meta name="description" content="Hermes Life OS : application personnelle d'assistance exécutive, en lecture seule sur l'agenda et la messagerie de son unique utilisateur.">
+<meta name="description" content="Hermes Life OS : application personnelle d'assistance exécutive pour son unique utilisateur (messagerie en lecture seule, agenda avec validation).">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,10 +17,10 @@
 
 <h2>Ce qu'elle fait avec Google</h2>
 <ul>
-<li><strong>Google Agenda, en lecture seule</strong> : lire les événements pour connaître les disponibilités réelles.</li>
+<li><strong>Google Agenda</strong> : lire les événements pour connaître les disponibilités réelles, créer des blocs de temps sans invités, et modifier ou supprimer un événement uniquement après validation explicite de l'utilisateur.</li>
 <li><strong>Gmail, en lecture seule</strong> : rechercher et lire des messages pour repérer ce qui demande une décision.</li>
 </ul>
-<p>L'application ne peut ni envoyer de mail, ni modifier, supprimer ou créer quoi que ce soit dans Gmail ou l'agenda : elle ne demande que les autorisations <code>gmail.readonly</code> et <code>calendar.readonly</code>.</p>
+<p>L'application ne peut ni envoyer, ni modifier, ni supprimer de mail : l'accès Gmail est limité à <code>gmail.readonly</code>. Pour l'agenda, elle demande <code>calendar.events</code> (événements uniquement, sans accès aux réglages ni au partage) et n'invite jamais personne.</p>
 
 <h2>Qui peut l'utiliser</h2>
 <p>Personne d'autre que son auteur. Il ne s'agit pas d'un service ouvert au public.</p>

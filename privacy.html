@@ -4,23 +4,23 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Confidentialité Hermes Life OS</title>
-<meta name="description" content="Politique de confidentialité de Hermes Life OS, application personnelle en lecture seule.">
+<meta name="description" content="Politique de confidentialité de Hermes Life OS, application personnelle.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <main>
 <h1>Politique de confidentialité</h1>
-<p class="lead">Hermes Life OS. En vigueur depuis le 5 octobre 2026.</p>
+<p class="lead">Hermes Life OS. En vigueur depuis le 5 octobre 2026, mise à jour le 5 octobre 2026 (écriture dans l'agenda).</p>
 
 <h2>Portée</h2>
 <p>Hermes Life OS est une application personnelle. Son seul utilisateur est son auteur, qui autorise lui-même l'accès à ses propres comptes Google. Aucun autre utilisateur n'est accepté.</p>
 
-<h2>Données consultées</h2>
+<h2>Données consultées et actions</h2>
 <ul>
 <li><strong>Gmail</strong> (autorisation <code>gmail.readonly</code>) : métadonnées (expéditeur, objet, date, libellés), extrait et, si nécessaire, texte d'un message.</li>
-<li><strong>Google Agenda</strong> (autorisation <code>calendar.readonly</code>) : titre, horaires, lieu et statut des événements de l'agenda principal.</li>
+<li><strong>Google Agenda</strong> (autorisation <code>calendar.events</code>) : lecture du titre, des horaires, du lieu et du statut des événements ; création d'événements sans invités ; modification ou suppression d'un événement uniquement après validation explicite de l'utilisateur.</li>
 </ul>
-<p>L'accès est strictement en lecture : l'application ne peut ni envoyer, ni modifier, ni supprimer, ni créer de données Google.</p>
+<p>Gmail est strictement en lecture : l'application ne peut ni envoyer, ni modifier, ni supprimer de mail. Dans l'agenda, elle n'invite jamais personne et n'envoie aucune notification ; elle n'a accès ni aux réglages ni au partage des agendas.</p>
 
 <h2>Utilisation</h2>
 <p>Ces données servent uniquement à des fonctionnalités destinées à l'utilisateur lui-même : connaître ses disponibilités, résumer ce qui demande son attention, et relier ses actions à ses objectifs.</p>
