@@ -11,3 +11,7 @@ a{color:var(--accent)}
 ul{padding-left:20px}
 footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
 code{font-size:.92em}
+.auth{border:1px solid var(--line);border-radius:8px;padding:16px 20px;margin:0 0 32px}
+.auth h2{margin-top:0}
+pre{white-space:pre-wrap;word-break:break-all;background:var(--line);padding:12px;border-radius:6px;font-size:.9rem}
+button{font:inherit;padding:6px 14px;border-radius:6px;border:1px solid var(--line);background:var(--bg);color:var(--fg);cursor:pointer}

@@ -9,6 +9,16 @@
 </head>
 <body>
 <main>
+<section id="auth-result" class="auth" hidden>
+<h2>Autorisation bancaire reçue</h2>
+<p>Copie ce message et envoie-le à Hermes Executive dans <code>#executive</code> dans l'heure. Rien n'a été transmis par cette page.</p>
+<pre id="auth-command"></pre>
+<button type="button" id="auth-copy">Copier</button>
+</section>
+<section id="auth-error" class="auth" hidden>
+<h2>Autorisation non aboutie</h2>
+<p id="auth-error-text"></p>
+</section>
 <h1>Hermes Life OS</h1>
 <p class="lead">Un système d'exploitation exécutif personnel, conçu et utilisé par une seule personne.</p>
 
@@ -32,5 +42,25 @@
 
 <footer>Hermes Life OS, projet personnel. Contact : <a href="https://github.com/ikoro-labs/hermes-life-os-site/issues">issues GitHub de ce site</a>.</footer>
 </main>
+<script>
+// Page statique : lit le code de retour de la banque dans l'URL et l'affiche, sans rien envoyer (D-043).
+(function () {
+  var q = new URLSearchParams(window.location.search);
+  var code = q.get("code"), state = q.get("state"), error = q.get("error");
+  var safe = function (v) { return /^[A-Za-z0-9._~-]{1,512}$/.test(v || ""); };
+  if (code && safe(code) && (!state || safe(state))) {
+    var cmd = "life-os-bank auth-code --code " + code + (state ? " --state " + state : "");
+    document.getElementById("auth-command").textContent = cmd;
+    document.getElementById("auth-result").hidden = false;
+    document.getElementById("auth-copy").addEventListener("click", function () {
+      navigator.clipboard.writeText(cmd).then(function () { document.getElementById("auth-copy").textContent = "Copié"; });
+    });
+    history.replaceState(null, "", window.location.pathname);
+  } else if (error) {
+    document.getElementById("auth-error-text").textContent = "La banque a renvoyé : " + error.slice(0, 120) + ". Relance l'autorisation depuis #executive.";
+    document.getElementById("auth-error").hidden = false;
+  }
+})();
+</script>
 </body>
 </html>
