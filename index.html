@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Hermes Life OS</title>
-<meta name="description" content="Hermes Life OS : application personnelle d'assistance exécutive pour son unique utilisateur (messagerie en lecture seule, agenda avec validation).">
+<meta name="description" content="Hermes Life OS : application personnelle d'assistance exécutive pour son unique utilisateur (messagerie et comptes bancaires en lecture seule, agenda avec validation).">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,10 +22,13 @@
 </ul>
 <p>L'application ne peut ni envoyer, ni modifier, ni supprimer de mail : l'accès Gmail est limité à <code>gmail.readonly</code>. Pour l'agenda, elle demande <code>calendar.events</code> (événements uniquement, sans accès aux réglages ni au partage) et n'invite jamais personne.</p>
 
+<h2>Ce qu'elle fait avec les comptes bancaires</h2>
+<p>Via Enable Banking et les API d'open banking (DSP2), l'application lit en <strong>lecture seule</strong> les soldes et transactions des comptes de son auteur, pour son suivi financier personnel. Elle ne peut initier aucun paiement ni virement, et ne reçoit jamais les identifiants bancaires : l'authentification a lieu directement auprès de la banque.</p>
+
 <h2>Qui peut l'utiliser</h2>
 <p>Personne d'autre que son auteur. Il ne s'agit pas d'un service ouvert au public.</p>
 
-<p><a href="privacy.html">Politique de confidentialité</a></p>
+<p><a href="privacy.html">Politique de confidentialité</a> · <a href="terms.html">Conditions d'utilisation</a></p>
 
 <footer>Hermes Life OS, projet personnel. Contact : <a href="https://github.com/ikoro-labs/hermes-life-os-site/issues">issues GitHub de ce site</a>.</footer>
 </main>
